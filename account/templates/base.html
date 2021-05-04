@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<div class="page-header">
+    <meta charset="utf-8">
+    <title>{% block title %}Gli AforisAmanti{% endblock %}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    <h1><a href="/">Gli AforisAmanti</a></h1>
+</div>
+    <style>
+    div {
+        background-image: url('https://img.freepik.com/free-vector/cloud-sky-cartoon-background-blue-sky-with-white-clouds-poster-flyer-cloudscape-panorama-pattern-seamless-texture_176411-732.jpg?size=626&ext=jpg');
+        background-attachment: fixed;
+        background-size: cover
+    }
+</style>
+    <body>
+        <div class="container">
+      <ol class="breadcrumb my-4">
+        {% block breadcrumb %}
+        {% endblock %}
+      </ol>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

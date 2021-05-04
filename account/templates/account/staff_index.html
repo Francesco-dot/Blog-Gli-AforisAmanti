@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h2>Benvenuto nella pagina riservata allo staff!</h2><br>
+        <div class="navbar">
+            {% if user.is_authenticated %}
+            <b><p>| Ciao {{ user.username }}! |
+                <a href="{% url 'post_new' %}">Aggiungi un nuovo post
+                <span class="glyphicon glyphicon-plus"></span></a> |
+                <a href="{% url 'message_board' %}">Torna alla Homepage</a>
+                </p></b>
+            {% endif %}
+            {% for message in messages %}
+                <b></b><p>{{message}}</p></b>
+            {% endfor %}
+        </div>
+<div class="content">
+    <h3><a href="../post_numbers">Lista utenti e quantità post pubblicati</a></h3>
+    <h3><p><a href="../json">Dettagli dei post pubblicati nell'ultima ora in un file JSON</a></p></h3>
+</div>
+    </div>
+{% endblock %}

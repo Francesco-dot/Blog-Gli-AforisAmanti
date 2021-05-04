@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<body>
+<div class="container">
+      <ol class="breadcrumb my-4">
+     <h2>Nuovo post</h2>
+<div>
+    <b><p>| Ciao {{ user.username }}! |
+                <a href="{% url 'message_board' %}">Torna alla Homepage</a></b></p>
+    </div>
+     <form method="POST" class="post-form">
+         {{ form.as_p }}
+         {% csrf_token %}
+         <button type="submit" class="save btn btn-default">Salva</button>
+     </form>
+{% endblock %}
+      </ol>
+</div>
+</body>

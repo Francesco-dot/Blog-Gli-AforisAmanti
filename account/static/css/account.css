@@ -1,0 +1,20 @@
+.page-header{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 5px;
+}
+
+h1 a, h2 a, h3 a {
+    color: 	#ff4500;
+    font-family: 'Cantarell', sans-serif;
+}
+
+a {
+    color: 	#ff4500;
+}
+
+ {
+    color: 	#ff4500
+    background: #ff4500
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div><h2>Risultati di ricerca</h2></div>
+    <div class="navbar">
+        <b><p>| Ciao {{ user.username }}! |
+            <a href="{% url 'post_new' %}">Aggiungi un nuovo post
+                <span class="glyphicon glyphicon-plus"></span></a> |
+                <a href="{% url 'message_board' %}">Ritorna alla Homepage </a></p></b>
+    </div>
+        <div class="content">
+
+        <p>La stringa "{{query}}" compare {{counter}} volte nei post della bacheca</p>
+    </div>
+
+{% endblock %}

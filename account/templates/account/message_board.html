@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<body>
+    <div>
+    <b><p>| Ciao {{ user.username }}! |
+                <a href="{% url 'post_new' %}">Aggiungi un nuovo post
+                    <span class="glyphicon glyphicon-plus"></span></a> |
+                <a href="{% url 'logout' %}">Logout</a> | </b></p>
+    </div>
+<div>
+    <p>Scopri quante volte una stringa compare nei post:</p>
+    <form action="{% url 'search' %}" method="get">
+        <input name='q' type='text' placeholder="Inserisci una stringa" value="{{request.GET.q}}">
+        <input type="submit">
+    </form>
+</div>
+{% for post in posts %}
+    <div class="post">
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        <div class="date">
+            <p>pubblicato il: {{ post.published_date }}</p>
+        </div>
+            <p class="date">Autore: {{post.author}} <br> txId: {{post.txId}}</p>
+            </div>
+{% endfor %}
+</body>
+<p><a href="../staff/staff_index">Sezione dello Staff</a></p>
+
+{% endblock %}

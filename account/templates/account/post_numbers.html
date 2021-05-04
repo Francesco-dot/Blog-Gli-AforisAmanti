@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+        <div class="navbar">
+            <h2>Numero di post</h2>
+            <b><p>| Ciao {{ user.username }}! |
+                <a href="{% url 'post_new' %}">Aggiungi un nuovo post
+                <span class="glyphicon glyphicon-plus"></span></a> |
+                <a href="{% url 'message_board' %}"> Torna alla Homepage</a>
+                </p></b>
+        </div>
+    <div class="content">
+
+{% csrf_token %}
+{% for username, num in num_post.items %}
+  <li>{{ username }} ha pubblicato {{ num }} post</li>
+{% endfor %}
+    </div>
+{% endblock %}
